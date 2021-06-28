@@ -56,8 +56,10 @@
 
 		public function savePage(){
 			$listId = $this->savesCtrl->getSaved();
+			if(count($listId) > 0)
 			// print_r($listId);
 			$data = $this->housesCtrl->getFromSave($listId);
+			else $data=[];
 			// print_r($data);
 			$this->view('save',$data);
 		}
